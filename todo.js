@@ -29,7 +29,7 @@ function paintToDo(text) {
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
-  const newId = toDos.length + 1;
+  const newId = Math.floor((Math.random()*1000));
   delBtn.innerHTML = "X";
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
