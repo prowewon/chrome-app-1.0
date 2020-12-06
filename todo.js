@@ -31,6 +31,7 @@ function paintToDo(text) {
   const span = document.createElement("span");
   const newId = Math.floor((Math.random()*1000));
   delBtn.innerHTML = "X";
+  delBtn.setAttribute("class", "delBtn");
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
   li.appendChild(span);
@@ -39,7 +40,7 @@ function paintToDo(text) {
   toDoList.appendChild(li);
   const toDoObj = {
     text: text,
-    id: newId,
+    id: newId
   };
   toDos.push(toDoObj);
   saveToDos();
@@ -48,8 +49,13 @@ function paintToDo(text) {
 function handleSubmit(event) {
   event.preventDefault();
   const currentValue = toDoInput.value;
-  paintToDo(currentValue);
-  toDoInput.value = "";
+  if(currentValue == "") {
+    alert("오늘의 할 일을 적어보세요.");
+  } else {
+    paintToDo(currentValue);
+    toDoInput.value = "";
+  }
+  
 }
 
 function loadToDos() {
