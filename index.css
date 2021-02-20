@@ -7,6 +7,10 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 .js-clock {
   margin-top: 50px;
   font-size: 100px;
@@ -35,25 +39,53 @@ body {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.js-toDoList {
+.list-carrier {
+  width: 60%;
+  margin: 10px auto 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.js-pendingList,
+.js-finishedList {
   padding: 10px;
-  width: 500px;
+  width: 47%;
   background-color: white;
-  margin: 10px auto;
   font-size: 20px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   text-align: left;
 }
 
-.js-toDoList li {
-  margin: 5px 0;
+.js-pendingList li,
+.js-finishedList li {
+  margin: 10px 0;
+}
+
+.list__title {
+  font-weight: 700;
+  font-size: 25px;
+  opacity: 0.7;
+}
+
+.delBtn,
+.checkBtn {
+  float: right;
+  background-color: white;
+  border: 2px solid black;
+  font-size: 13px;
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.checkBtn {
+  color: green;
+  margin-right: 3px;
 }
 
 .delBtn {
-  float: right;
-  background-color: white;
-  border: 2px solid;
-  font-weight: 300;
+  color: red;
 }
 
 .showing {
